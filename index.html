@@ -2111,7 +2111,7 @@
                     return;
                 }
                 
-                let message = "Hello! I'd like to place an order:\n\n";
+                let message = "Welcome to DivineByte — where sweetness meets perfection! 🎂🌸:\n\n";
                 let total = 0;
                 
                 cart.forEach(item => {
@@ -2119,8 +2119,9 @@
                     total += item.price * item.quantity;
                 });
                 
-                message += `\nTotal: PKR ${total.toFixed(2)}`;
-                message += "\n\nPlease let me know about delivery options and timing.";
+                message += `\nYour Sweet Bill: PKR ${total.toFixed(2)}`;
+                message += "\n\nI’d love to know more about your delivery options and timings, please. 🚚✨
+Do you offer same-day delivery in Karachi, or should I place my order in advance? 😊.";
                 
                 const encodedMessage = encodeURIComponent(message);
                 const phoneNumber = "03190306199"; // Replace with actual number
