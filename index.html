@@ -2106,29 +2106,29 @@
             
             // WhatsApp Integration
             checkoutBtn.addEventListener('click', () => {
-                if (cart.length === 0) {
-                    showToast('Your cart is empty', 'warning');
-                    return;
-                }
-                
-                let message = "Welcome to DivineByte — where sweetness meets perfection! 🎂🌸:\n\n";
-                let total = 0;
-                
-                cart.forEach(item => {
-                    message += `- ${item.name} x${item.quantity}: PKR ${(item.price * item.quantity).toFixed(2)}\n`;
-                    total += item.price * item.quantity;
-                });
-                
-                message += `\n Your Sweet Bill: PKR ${total.toFixed(2)}`;
-                message += "\n\n I’d love to know more about your delivery options and timings, please. 🚚✨
-Do you offer same-day delivery in Karachi, or should I place my order in advance? 😊.";
-                
-                const encodedMessage = encodeURIComponent(message);
-                const phoneNumber = "03190306199"; // Replace with actual number
-                const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-                
-                window.open(whatsappURL, '_blank');
-            });
+    if (cart.length === 0) {
+        showToast('Your cart is empty', 'warning');
+        return;
+    }
+
+    let message = "Welcome to DivineByte — where sweetness meets perfection! 🎂🌸:\n\n";
+    let total = 0;
+
+    cart.forEach(item => {
+        message += `- ${item.name} x${item.quantity}: PKR ${(item.price * item.quantity).toFixed(2)}\n`;
+        total += item.price * item.quantity;
+    });
+
+    message += `\n🍯 Your Sweet Bill: PKR ${total.toFixed(2)}\n\n`;
+    message += `I’d love to know more about your delivery options and timings, please. 🚚✨
+Do you offer same-day delivery in Karachi, or should I place my order in advance? 😊`;
+
+    const encodedMessage = encodeURIComponent(message);
+    const phoneNumber = "03190306199"; // Replace with actual number
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    window.open(whatsappURL, '_blank');
+}) 
 
             // Wishlist Functionality
             const wishlistIcon = document.getElementById('wishlistIcon');
